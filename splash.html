@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+    <link rel="stylesheet" href="splash.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <img src="images/logo.png" alt="logo" height="100" width="100">
+            ClimaX | Climate Actions
+        </div>
+        <div class="box">
+            <h2>Missions</h2><br>
+            <ul>
+                <li class="list-item"><img src="images/list_icon.png" alt="rocket" class="list_icon">Empowering positive change by offering a curated selection of inspiring and eco-friendly products through our online shopping website.</li><br>
+                <li class="list-item"><img src="images/list_icon.png" alt="rocket" class="list_icon">Offering the flexibility of volunteering with United Nation Sustainable Developments Goals of climate actions to achieve the broader sustainable development objectives.</li><br>
+                <li class="list-item"><img src="images/list_icon.png" alt="rocket" class="list_icon">Providing users with the knowledge of major climate challenges such as changing the composition of atmosphere, the impacts from climate change, and potentially more frequent and intense natural disasters on Small Island Developing States (SIDS) as well as, what are the effects of climate challenges on humankind, and actions that United Nation Organization has taken to reduce the climate challenges.</li>
+            </ul>
+        </div>
+        <div class="student-box">
+            <div class="student-details">
+                <h3>Student 1</h3>
+                <p>Nimdiya Ranasinghe</p>
+                <p>20230199</p>
+            </div>
+            <div class="student-details">
+                <h3>Student 2</h3>
+                <p>Chalindu Fernando</p>
+                <p>20230191</p>
+            </div>
+            <div class="student-details">
+                <h3>Student 3</h3>
+                <p>Anupa Kehelgamuwa</p>
+                <p>20230237</p>
+            </div>
+            <div class="student-details">
+                <h3>Student 4</h3>
+                <p>Uthpala Wijesundara</p>
+                <p>20230205</p>
+            </div>
+        </div>
+        <div id="splash-screen">
+            <img id="loading" src="images/loader.gif" height="100" width="100" alt="load">
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                window.location.href = 'home.html'; // Redirect to the home page after 4 seconds
+            }, 4000); // The splash screen will be hidden after 4 seconds
+        });
+    </script>
+    
+</body>
+</html>

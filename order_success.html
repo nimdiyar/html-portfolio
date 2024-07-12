@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: antiquewhite;
+        }
+
+        h1 {
+            color: green;
+        }
+
+        #backButton {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        #backButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Your order has been successfull!</h1>
+    <p>Thank you for shopping with us.</p>
+    <button id="backButton">Back</button>
+
+    <script>
+        // Function to navigate back to the previous page
+        document.getElementById('backButton').addEventListener('click', function () {
+            
+            window.open("addtocart.html");
+        });
+    </script>
+</body>
+
+</html>

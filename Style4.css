@@ -1,0 +1,683 @@
+.gallery {
+  width: 80%;
+  height: 80%;
+  margin: 100px auto 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 30px;
+}
+
+.gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.gallery-item:hover{
+  transform: scale(0.9);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 68px; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin:auto;
+  max-width: 100%; 
+  max-height: 100%; 
+  border: 2px white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  
+}
+#buttons {
+  position: absolute;
+  top: 20px;
+  left: 840px;
+  z-index: 100;
+  color: #fff;
+ padding: 10px;
+ font-size: larger;
+}
+
+.close {
+  color: #fff;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+#back-image{
+  background-image:url('Green\ Modern\ Nature\ Presentation.jpg');
+  background-size:cover;
+}
+h3{
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 1px;
+}
+.modal-description {
+  color: rgb(240, 236, 236);
+  text-align: left;
+  margin-top:1px;
+  margin-bottom: 1px;
+  margin-left: 20px;
+  margin-right:auto;
+  font-weight: bold;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: large;
+  text-transform: uppercase;
+  line-height: 200%;
+  background-color: #333;
+  border-radius: 8px;
+  opacity: 0.8;
+  padding:18px 15px;
+}
+.modal-content-container{
+  display: flex;
+  width: 90%;
+  height: 80%;
+  margin: auto;
+}
+
+.link:hover text {
+  font-weight: bold;
+}
+
+.link:hover #shape1{
+  fill: rgb(31, 150, 36);
+  stroke-width: 2px;
+}
+.link:hover #shape2{
+  fill: rgb(31, 150, 36);
+  stroke-width: 2px;
+}
+.link:hover #shape3{
+  fill: rgb(31, 150, 36);
+  stroke-width: 2px;
+}
+.link:hover #shape4{
+  fill: rgb(31, 150, 36);
+  stroke-width: 2px;
+}
+.link:hover #shape5{
+  fill: rgb(31, 150, 36);
+  stroke-width: 2px;
+}
+.link:hover #shape6{
+  fill: rgb(31, 150, 36);
+  stroke-width: 2px;
+}
+.link:hover #shape7{
+  fill: rgb(31, 150, 36);
+  stroke-width: 2px;
+}
+.link:hover #shape8{
+  fill: rgb(31, 150, 36);
+  stroke-width: 2px;
+}
+.link:hover #shape9{
+  fill: rgb(31, 150, 36);
+  stroke-width: 2px;
+}
+.link:hover #shape10{
+  fill: rgb(31, 150, 36);
+  stroke-width: 2px;
+}
+.link:hover #shape11{
+  fill: rgb(31, 150, 36);
+  stroke-width: 2px;
+}
+.link:hover #shape12{
+  fill: rgb(31, 150, 36);
+  stroke-width: 2px;
+}
+.link:hover #shape13{
+  fill: rgb(31, 150, 36);
+  stroke-width: 2px;
+}
+
+
+#text1{
+  text-anchor: middle;
+  fill: rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+#text2{
+  text-anchor: middle;
+  fill: rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+#text3{
+  text-anchor: middle;
+  fill: rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+#text4{
+  text-anchor: middle;
+  fill: rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+#text5{
+  text-anchor: middle;
+  fill: rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+#text6{
+  text-anchor: middle;
+  fill: rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+#text7{
+  text-anchor: middle;
+  fill: rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+#text8{
+  text-anchor: middle;
+  fill: rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+#text9{
+  text-anchor: middle;
+  fill: rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+#text10{
+  text-anchor: middle;
+  fill: rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+#text11{
+  text-anchor: middle;
+  fill: rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+#text12{
+  text-anchor: middle;
+  fill: rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+#text13{
+  text-anchor: middle;
+  fill: rgb(255, 255, 255);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+
+
+#shape1 {
+  fill: rgb(38, 56, 22);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1px;
+  transition: fill 0.3s, stroke-width 0.3s;
+  fill-opacity: calc(0.5);
+}
+#shape2 {
+  fill: rgb(38, 56, 22);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1px;
+  transition: fill 0.3s, stroke-width 0.3s;
+  fill-opacity: calc(0.5);
+}
+#shape3 {
+  fill: rgb(38, 56, 22);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1px;
+  transition: fill 0.3s, stroke-width 0.3s;
+  fill-opacity: calc(0.5);
+}
+#shape4 {
+  fill: rgb(38, 56, 22);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1px;
+  transition: fill 0.3s, stroke-width 0.3s;
+  fill-opacity: calc(0.5);
+}
+#shape5 {
+  fill: rgb(38, 56, 22);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1px;
+  transition: fill 0.3s, stroke-width 0.3s;
+  fill-opacity: calc(0.5);
+}
+#shape6 {
+  fill: rgb(38, 56, 22);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1px;
+  transition: fill 0.3s, stroke-width 0.3s;
+  fill-opacity: calc(0.5);
+}
+#shape7 {
+  fill: rgb(38, 56, 22);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1px;
+  transition: fill 0.3s, stroke-width 0.3s;
+  fill-opacity: calc(0.5);
+}
+#shape8 {
+  fill: rgb(38, 56, 22);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1px;
+  transition: fill 0.3s, stroke-width 0.3s;
+  fill-opacity: calc(0.5);
+}
+#shape9{
+  fill: rgb(38, 56, 22);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1px;
+  transition: fill 0.3s, stroke-width 0.3s;
+  fill-opacity: calc(0.5);
+}
+#shape10{
+  fill: rgb(38, 56, 22);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1px;
+  transition: fill 0.3s, stroke-width 0.3s;
+  fill-opacity: calc(0.5);
+}
+#shape11 {
+  fill: rgb(38, 56, 22);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1px;
+  transition: fill 0.3s, stroke-width 0.3s;
+  fill-opacity: calc(0.5);
+}
+#shape12 {
+  fill: rgb(38, 56, 22);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1px;
+  transition: fill 0.3s, stroke-width 0.3s;
+  fill-opacity: calc(0.5);
+}
+#shape13 {
+  fill: rgb(38, 56, 22);
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1px;
+  transition: fill 0.3s, stroke-width 0.3s;
+  fill-opacity: calc(0.5);
+}
+#clickableShape {
+  width: 100%;
+  height: auto;
+}
+
+
+#name{
+  text-align: center;
+  color: aliceblue;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  margin-top: 120px;
+  z-index: 999;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+}
+#line1{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line2{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line3{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line4{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line5{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line6{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line7{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line8{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line9{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line10{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line11{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line12{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line13{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line14{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+#line15{
+  stroke: rgb(255, 244, 244);
+   stroke-width: 3px;
+}
+
+#polyline1{
+  stroke: bisque;
+  stroke-width: 3px;
+  fill: none;
+}
+#polyline2{
+  stroke: bisque;
+  stroke-width: 3px;
+  fill: none;
+}
+#polyline3{
+  stroke: bisque;
+  stroke-width: 3px;
+  fill: none;
+}
+#polyline4{
+  stroke: bisque;
+  stroke-width: 3px;
+  fill: none;
+}
+#polyline5{
+  stroke: bisque;
+  stroke-width: 3px;
+  fill: none;
+}
+#polyline6{
+  stroke: bisque;
+  stroke-width: 3px;
+  fill: none;
+}
+#polyline7{
+  stroke: bisque;
+  stroke-width: 3px;
+  fill: none;
+}
+#polyline8{
+  stroke: bisque;
+  stroke-width: 3px;
+  fill: none;
+}
+#polyline9{
+  stroke: bisque;
+  stroke-width: 3px;
+  fill: none;
+}
+#polyline10{
+  stroke: bisque;
+  stroke-width: 3px;
+  fill: none;
+}
+#polyline11{
+  stroke: bisque;
+  stroke-width: 3px;
+  fill: none;
+}
+#polyline12{
+  stroke: bisque;
+  stroke-width: 3px;
+  fill: none;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding:1px;
+  text-align: center;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  position:fixed;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  width: 100%;
+  z-index: 1000;
+  height: 50px;
+
+}
+header img {
+  height: 40px; 
+  margin-right: 10px;
+}
+nav {
+  background-color: #444;
+  padding: 10px;
+  text-align: center;
+  position:fixed;
+  width: 100%;
+  top: 51px;
+  left: 0%;
+  right: 0%;
+  z-index: 1000;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 10px;
+}
+nav a:hover {
+  background-color: #555;
+}
+#foot {
+  background-color: #333;
+  color: #ffff;
+  text-align: center;
+  z-index: 1000;
+  position:absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 1px;
+}
+#design{
+  color: #fff;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-decoration: none;
+}
+#copy-right{
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+#content{
+  text-align: center;
+  color: rgb(249, 255, 247);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  margin-top: 120px;
+  z-index: 999;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+#body-image{
+  background-image: url(lucija-ros-SxNX66JAFHI-unsplash.jpg);
+  background-size: cover;
+}
+#introduction1{
+  text-align: left;
+  color: #b19b9b;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+#introduction2{
+  text-align: left;
+  color: #b19b9b;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+#introduction3{
+  text-align: left;
+  color: #b19b9b;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+#intro1{
+  font-size: larger;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(255, 238, 238);
+  padding: 20px;
+}
+#intro2{
+  font-size: larger;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(255, 238, 238);
+  padding: 20px;
+}
+#intro3{
+  font-size: larger;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(255, 238, 238);
+  padding: 20px;
+}
+#sdg-image{
+  width: 800px;
+  height: 190px;
+  display: block;
+  margin: auto;
+  padding: 20px;
+}#sdg-image2{
+  width: 400px;
+  display: block;
+  margin: auto;
+  padding: 20px;
+}
+#national{
+  width: 400px;
+  display: block;
+  margin: auto;
+  padding: 20px;
+  }
+
+  #edit{
+    padding: 10px;
+    height:45px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+    background-color: rgb(65, 112, 112);
+  }
+
+  #h3 {
+    display: block;
+    color: black; 
+    font-size:larger;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #bbc0dd;
+    
+}
+#page{
+  margin-top: 100px;
+}
+#h2{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #172e30;
+  display: block;
+  padding: 10px;
+  color: #fff;
+}
+#content-paragraph1{
+  font-family:'Times New Roman', Times, serif;
+  font-size: large;
+  line-height: 25px;
+  background-color:#bbc0dd;
+  text-align: center;
+}
+#content-paragraph2{
+  font-family:'Times New Roman', Times, serif;
+  font-size: large;
+  line-height: 25px;
+  background-color:#bbc0dd;
+  text-align: center;
+}
+#content-paragraph3{
+  font-family:'Times New Roman', Times, serif;
+  font-size: large;
+  line-height: 25px;
+  background-color:#bbc0dd;
+  text-align: center;
+}
+#top-link{
+  text-align: center;
+  color: red;
+}
+#bottom-link{
+  color: red;
+}
+

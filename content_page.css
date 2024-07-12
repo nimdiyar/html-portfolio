@@ -1,0 +1,200 @@
+/* Add automatic background color change with slightly darker colors */
+@keyframes colorChange {
+    0% { background-color: #e6e6e6; } /* Light gray */
+    25% { background-color: #ccd9ff; } /* Light blue */
+    50% { background-color: #ffcc99; } /* Light brown */
+    75% { background-color: #b3ffb3; } /* Light green */
+    100% { background-color: #e6ccff; } /* Light purple */
+  }
+  
+  /* Add shading animation to h2 elements */
+  @keyframes shadeAnimation {
+    0% { opacity: 0; } /* Start with no opacity */
+    50% { opacity: 1; } /* Fully opaque in the middle of animation */
+    100% { opacity: 0; } /* Fade out at the end */
+  }
+  
+  /* Add outline animation to images */
+  @keyframes outlineAnimation {
+    0% { border-color: transparent; } /* Start with transparent border */
+    50% { border-color: black; } /* Black border in the middle of animation */
+    100% { border-color: transparent; } /* Fade back to transparent at the end */
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%
+}
+header a:hover img {
+    transform: scale(1.1); /* Scale up the logo on hover */
+}
+header img {
+    height: 60px; /* Adjust as needed */
+    margin-right: 10px; /* Adjust as needed */
+    cursor: pointer; /* Add cursor pointer */
+    transition: transform 0.3s ease; /* Added transition for smooth scaling */
+    width: 60px;
+}
+nav {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+    width:100%
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+nav a:hover {
+    background-color: #555;
+}
+footer {
+    background-color: rgba(51, 51, 51, 0.9); /* Slightly transparent black */
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+.topics{
+    margin-left: 20px;
+}
+a:hover {
+    color: plum; /* Turquoise hover effect */
+    text-decoration: underline;
+}    
+  
+  body {
+    animation: colorChange 20s infinite alternate; /* Alternate between colors every 20 seconds */
+  }
+  
+  /* Reset default browser styles */
+  body, h1, h2, h3, p, ul, li, img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center; /* Center-align h2 titles */
+    margin-bottom: 20px;
+    position: relative; /* Ensure relative positioning for pseudo-element */
+  }
+  
+  h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000; /* Color of underline */
+    position: absolute;
+    bottom: -2px; /* Position the underline slightly below the text */
+    left: 0;
+    opacity: 0; /* Start with no opacity */
+    animation: shadeAnimation 5s ease-in-out infinite alternate; /* Shading animation */
+  }
+  
+  .para {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center-align text within paragraphs */
+    margin-bottom: 40px;
+  }
+  #image{
+    width: 400px;
+  }
+  
+  .des {
+    margin-bottom: 15px;
+    text-align: center; /* Center-align paragraphs */
+    line-height: 1.4; /* Adjust line height for better readability */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .des:first-child {
+    margin-top: 0; /* Remove top margin for the first paragraph */
+  }
+  
+  .des:last-child {
+    margin-bottom: 0; /* Remove bottom margin for the last paragraph */
+  }
+  
+  .des ol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0; /* Remove default padding */
+  }
+  
+  .des ol li {
+    text-align: left; /* Align list items to the left */
+    margin-bottom: 10px; /* Add space between list items */
+    font-weight: bold; /* Make list items bold */
+  }
+  
+  img {
+    display: block;
+    margin-bottom: 15px;
+    width: 700px; /* Set the width of the image */
+    height: 300px; /* Set the height of the image */
+    border: 2px solid transparent; /* Initial transparent border */
+    animation: outlineAnimation 2s infinite alternate; /* Run the outline animation */
+  }
+  
+  ol {
+    list-style-type: none;
+  }
+  
+  /* Customizing list styles */
+  ol li {
+    margin-bottom: 5px;
+  }
+  
+  /* Responsive styles */
+  @media only screen and (max-width: 600px) {
+    h1 {
+      font-size: 30px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    .des {
+      text-indent: 10px;
+    }
+  }
+  

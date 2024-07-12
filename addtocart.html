@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="addtocart.css">
+    <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <a href="home.html">
+            <img src="home/logo.png" alt="Climate Action Logo">
+        </a>
+        <h1>ClimaX | Climate Action</h1>
+    </header>
+    
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="addtocart.html">Shop</a>
+        <a href="User_Profile.html">User Profile</a>
+        <a href="sitemap.html">Site-Map</a> <!-- Added Site-Map link -->
+        <a href="feedback.html">Feedback</a>
+        <a href="About_Us.html">About Us</a>
+    </nav>
+    <div class="header">
+        &nbsp;
+        <div class="cart"><i class="fa-solid fa-cart-shopping"></i><p id="count">0</p></div>
+    </div>
+    <div class="container">
+        <div id="root"></div>
+        <div class="sidebar">
+            <div class="head"><p>My Cart</p></div>
+            <div id="cartItem">Your cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">Rs 0.00</h2>
+                <button class="checkout-button" id="checkoutBtn" onclick="checkout()">Checkout</button>
+                <p id="validationMessage" class="validation-message"></p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <a href="page_editor.html">Page Editor</a><br>
+        &copy; 2024 Climate Action Organization. All rights reserved.
+    </footer>
+    <script src="addtocart.js"></script>
+</body>
+</html>

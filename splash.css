@@ -1,0 +1,143 @@
+/* Reset default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgoldenrodyellow; /* White background color for the page */
+    background-image: url('images/bg.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+}
+
+.container {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top of the container */
+    align-items: center; /* Center horizontally */
+}
+
+.title {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    font-size: 24px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.title img {
+    height: 60px; /* Adjust as needed */
+    width:60px;
+    margin-right: 10px; /* Adjust as needed */
+    cursor: pointer; /* Add cursor pointer */
+    transition: transform 0.3s ease; /* Added transition for smooth scaling */
+}
+
+#splash-screen {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.box {
+    margin-top: 50px;
+    background-color: aqua; /* Lighter background color for the box */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Increase box width */
+    max-width: 800px; /* Limit width for better readability */
+    animation: colorChange 1s infinite alternate; /* Color-changing animation */
+    text-align: center; /* Center text inside the box */
+}
+
+.student-box {
+    display: flex;
+    justify-content: space-around; /* Evenly space the student boxes */
+    margin-top: 60px;
+}
+
+.student-details {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Fair gap between student boxes */
+    background-color: lightgreen; /* Light green color for student boxes */
+    margin-right: 10px; /* Margin between student boxes */
+    box-shadow: none; /* Remove existing box shadow */
+    position: relative; /* Position relative for absolute positioning of outline */
+}
+
+/* Running outline animation */
+.student-details::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid transparent; /* Initial transparent border */
+    border-radius: 5px; /* Match the border-radius of the box */
+    animation: outlineAnimation 1s infinite alternate; /* Outline animation */
+}
+
+/* Outline animation keyframes */
+@keyframes outlineAnimation {
+    0% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: transparent; /* Set border-color to transparent to remove the outline */
+    }
+}
+
+/* Color-changing animation for the box */
+@keyframes colorChange {
+    0% {
+        background-color: #f5f5f5;
+    }
+    50% {
+        background-color: #ecf0f1; /* Light blue-gray */
+    }
+    100% {
+        background-color: #f5f5f5;
+    }
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .box {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 100%;
+    }
+
+    .student-box {
+        flex-wrap: wrap;
+    }
+
+    .student-details {
+        flex: 0 0 calc(50% - 20px);
+        margin: 10px;
+    }
+}
+.list_icon{
+    width: 20px;
+    padding: 5px;
+}
+ul{
+    list-style: none;
+}

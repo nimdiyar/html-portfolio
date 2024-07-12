@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Section 2</title>
+    <link rel="stylesheet" href="checkout2.css">
+</head>
+
+<body>
+    
+    <div id="left-side">
+        <h2>Payment Information</h2>
+        <form action="checkout_process.html" method="POST" onsubmit="return validateForm()">
+            <div class="form-group">
+                <input type="radio" name="Payment" id="credit">
+                <label for="credit"> Credit/Debit card</label><br><br>
+                <input type="text" name="cardNumber" id="cardNumber" placeholder="Card Number*" required><br><br>
+                <input type="text" name="cardholderName" id="cardholderName" placeholder="Cardholder's Name*" required><br><br>
+                <input type="text" name="expirationMonth" id="expirationMonth" placeholder="Expiration Month*" required><br><br>
+                <input type="text" name="expirationYear" id="expirationYear" placeholder="Expiration Year*" required><br><br>
+                <input type="number" name="securityCode" id="securityCode" placeholder="Security Code*" required><br><br>
+                <input type="submit" name="Pay now" value="Pay now" id="button" onclick="showSuccessMessage()">
+            </div>
+        </form>
+    </div>
+    <div id="right-side">
+        <div id="order-summary">
+            <h3>Order Summary</h3>
+            <fieldset>
+                Order items:
+                <ul id="orderItemsList"></ul>
+                Subtotal:  <span id="subtotalAmount"></span><br><br>
+                Shipping Address: <span id="shippingInfo"></span><br><br>
+                Shipping Fee: <span id="shippingfee">Rs.300</span><br> <!-- Added shipping fee --> <br>
+                Total: <span id="totalAmount"></span>
+            </fieldset>
+        </div>
+    </div>
+
+    <script>
+        // Get shipping address from sessionStorage
+        const shippingAddress = JSON.parse(sessionStorage.getItem('shippingAddress'));
+
+        // Display shipping address in Order Summary
+        document.getElementById('shippingInfo').textContent = `${shippingAddress.address1}, ${shippingAddress.address2}, ${shippingAddress.town}`;
+
+        // Sample data (replace with actual data from sessionStorage or JavaScript logic)
+        const cartData = sessionStorage.getItem('cart');
+        const cart = cartData ? JSON.parse(cartData) : [];
+        const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+        const shippingFee = 300; // Shipping fee of Rs. 300
+        const total = subtotal + shippingFee; // Total including shipping fee
+
+        // Display order summary details
+        document.getElementById('subtotalAmount').textContent = `Rs.${subtotal.toFixed(2)}`;
+        document.getElementById('totalAmount').textContent = `Rs.${total.toFixed(2)}`;
+        
+        // Display order items with images in Order Summary
+        const orderItemsList = document.getElementById('orderItemsList');
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            const img = document.createElement('img');
+            img.src = item.image;
+            img.alt = item.title;
+            img.className = 'order-item-image';
+            li.appendChild(img);
+            if (['Baseball Hat', 'Sweat Shorts', 'Canvas Bag', 'D. Calendar'].includes(item.title)) {
+                li.classList.add('order-item-no-size-color');
+                li.appendChild(document.createTextNode(`${item.title}`));
+            } else {
+                li.appendChild(document.createTextNode(`${item.title} - Size: ${item.size}, Color: ${item.color}`));
+            }
+            orderItemsList.appendChild(li);
+        });
+        // Function to validate form fields
+        function validateForm() {
+            const cardNumber = document.getElementById('cardNumber').value.trim();
+            const cardholderName = document.getElementById('cardholderName').value.trim();
+            const expirationMonth = document.getElementById('expirationMonth').value.trim();
+            const expirationYear = document.getElementById('expirationYear').value.trim();
+            const securityCode = document.getElementById('securityCode').value.trim();
+
+            // Perform validation checks
+            if (cardNumber === '' || cardholderName === '' || expirationMonth === '' || expirationYear === '' || securityCode === '') {
+                alert('Please fill in all required fields.');
+                return false;
+            }
+
+            // Additional validation logic can be added here if needed
+            window.open("order_success.html");
+            return true; // Submit the form if all validations pass
+        }
+    </script>
+</body>
+
+</html>

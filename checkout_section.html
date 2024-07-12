@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Section</title>
+  <link rel="stylesheet" href="checkout_section.css">
+</head>
+
+<body>
+  <h1>Personal Details and Contact Information</h1>
+  <form id="checkoutForm" onsubmit="return validateForm()">
+    <div class="form-group">
+      <label for="fname">First Name*</label>
+      <input type="text" name="fname" id="fname" placeholder="First Name" required>
+    </div>
+    <div class="form-group">
+      <label for="lname">Last Name*</label>
+      <input type="text" name="lname" id="lname" placeholder="Last Name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email*</label>
+      <input type="email" name="email" id="email" placeholder="Email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone*</label>
+      <input type="tel" name="phone" id="phone" placeholder="Phone" required>
+    </div>
+
+    <div class="shipping-heading">
+      <h2>Shipping Address</h2>
+    </div>
+    <div class="form-group">
+      <label for="address1">Address Line 1*</label>
+      <input type="text" name="address1" id="address1" placeholder="Address Line 1" required>
+    </div>
+    <div class="form-group">
+      <label for="address2">Address Line 2*</label>
+      <input type="text" name="address2" id="address2" placeholder="Address Line 2" required>
+    </div>
+    <div class="form-group">
+      <label for="address3">Address Line 3</label>
+      <input type="text" name="address3" id="address3" placeholder="Address Line 3">
+    </div>
+    <div class="form-group">
+      <label for="town">Town/City*</label>
+      <input type="text" name="town" id="town" placeholder="Town/City" required>
+    </div>
+    <div class="form-group">
+      <label for="state">State/Country</label>
+      <input type="text" name="state" id="state" placeholder="State/Country">
+    </div>
+    <div class="form-group">
+      <label for="pcode">Postal Code*</label>
+      <input type="text" name="pcode" id="pcode" placeholder="Postal Code" required>
+    </div>
+
+    <input type="reset" name="reset" value="Clear Fields">
+    <input type="submit" name="send" value="Continue Checkout">
+  </form>
+
+  <script>
+    function validateForm() {
+      // Get form input values
+      var fname = document.getElementById('fname').value;
+      var lname = document.getElementById('lname').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var address1 = document.getElementById('address1').value;
+      var address2 = document.getElementById('address2').value;
+      var town = document.getElementById('town').value;
+      var pcode = document.getElementById('pcode').value;
+
+      // Check if any of the required fields are empty
+      if (fname === '' || lname === '' || email === '' || phone === '' || address1 === '' || address2 === '' || town === '' || pcode === '') {
+        alert('Please fill in all the required fields.');
+        return false; // Prevent form submission
+      }
+
+      // Store shipping address in sessionStorage
+      sessionStorage.setItem('shippingAddress', JSON.stringify({
+        address1: address1,
+        address2: address2,
+        town: town
+      }));
+
+      // If all required fields are filled, allow form submission
+      window.open("checkout2.html");
+      return false; // Prevent default form submission
+    }
+  </script>
+</body>
+
+</html>

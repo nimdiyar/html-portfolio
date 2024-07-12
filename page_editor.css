@@ -1,0 +1,76 @@
+header {
+    background-color: rgb(8, 105, 40);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.editor_a{
+    text-align: left;
+}
+body{
+    background-color: lightpink;
+    font-size: larger;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px; /* Adjust margin as needed */
+}
+
+.rectangle {
+    width: 300px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    background-color: red; /* Example color */
+    margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.tasks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tasks > div {
+    width: 45%;
+    padding: 20px;
+    margin-bottom: 20px; /* Adjust margin as needed */
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    background-color: blue; /* Example color */
+    margin-bottom: 20px; /* Adjust margin as needed */
+    color: black;
+}
+.tasks > div h3 {
+    font-size: 24px; /* Increase font size for titles */
+    font-weight: bold; /* Make font bold */
+    margin-bottom: 10px; /* Add space below the title */
+}
+
+/* Four different cool light radiant colors */
+.tasks > div:nth-child(1) {
+    background-color: #6FCF97; /* Light green */
+}
+
+.tasks > div:nth-child(2) {
+    background-color: #56CCF2; /* Light blue */
+}
+
+.tasks > div:nth-child(3) {
+    background-color: #F2C94C; /* Yellow */
+}
+
+.tasks > div:nth-child(4) {
+    background-color: #FF6F61; /* Light red */
+}
+a:hover {
+    color: rgb(36, 192, 192); /* Turquoise hover effect */
+    text-decoration: underline;
+}

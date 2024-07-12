@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback Page</title>
+<script src="https://kit.fontawesome.com/f7039314e3.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+<div class="container">
+    <div class="logo">
+        <a href="home.html"> 
+            <img src="logo.png" alt="Website Logo"> 
+        </a>
+        <h1>ClimaX | Climate Action</h1> 
+    </div><br>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="addtocart.html">Shop</a>
+        <a href="User_Profile.html">User Profile</a>
+        <a href="sitemap.html">Site-Map</a> 
+        <a href="feedback.html">Feedback</a>
+        <a href="About_Us.html">About Us</a>
+    </nav>
+</div>
+<div class="feedback-container">
+    <h1>Feedback Form</h1>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+    </div>
+    <div class="form-group-rating">
+        <label for="satisfaction">How satisfied are you with the service? <br> <span>( 1 star: Not Satified at all -- 5 stars: Extremely Satified )</span></label><br>
+        <div class="stars">
+            <i class="fa-solid fa-star check" data-value="1" active></i>
+            <i class="fa-solid fa-star" data-value="2"></i>
+            <i class="fa-solid fa-star" data-value="3"></i>
+            <i class="fa-solid fa-star" data-value="4"></i>
+            <i class="fa-solid fa-star" data-value="5"></i>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="serviceFeedback">Please tell us more about the website service:</label>
+        <textarea id="serviceFeedback" placeholder="Write your feedback here"></textarea>
+    </div>
+    <button onclick="submitFeedback()">Submit</button>
+    <button class="clear-button" onclick="clearForm()">Clear</button>
+</div>
+<p style="text-align: center;" class="design">Design by <a href="chalindu_page.html" target="_blank" class="design">Chalindu Yohan</a></p>
+<div class="social-icons social-icons-center">
+    <a href="https://www.facebook.com/cyonsax/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+    <a href="https://www.instagram.com/cyonsax/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+    <a href="https://twitter.com/cyonsax" target="_blank"><img src="twitter.png" alt="Twitter"></a>
+    <a href="www.linkedin.com/in/chalinduyohan23" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+</div>
+<br><br><br><br><br><br>
+<footer>
+    <p>&copy; 2024 Climate Action Organization. All rights reserved. <br><br>
+        <a href="page_editor.html" target="_blank">Nimdiya</a>&nbsp;&nbsp;  |&nbsp;&nbsp;   
+        <a href="chalindu_page.html" target="_blank">Chalindu</a>&nbsp;&nbsp;  |&nbsp;&nbsp;   
+        <a href="editorpage4.html" target="_blank">Uthpala</a>&nbsp;&nbsp;  |&nbsp;&nbsp;   
+        <a href="Editors_Page3.html" target="_blank">Anupa</a>
+    </p>
+</footer>
+
+<script>
+    function submitFeedback() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var serviceFeedback = document.getElementById("serviceFeedback").value;
+        var isValid = true;
+
+        // Reset error messages
+        document.querySelectorAll('.error-message').forEach(function (element) {
+            element.textContent = '';
+        });
+
+        // Validate name
+        if (!name.trim()) {
+            alert("Please fill out the name field");
+            isValid = false;
+        }
+
+        // Validate email
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email.trim() || !emailPattern.test(email)) {
+            alert("Please enter a valid email address");
+            isValid = false;
+        }
+
+        // Validate service feedback
+        if (!serviceFeedback.trim()) {
+            alert("Please fill out the feedback field");
+            isValid = false;
+        }
+
+        // Submit form if all fields are valid
+        if (isValid) {
+            // Construct the mailto link with the submitted information
+            var mailtoLink = "mailto:chalinduyohan2002@icloud.com" +
+                "?subject=Feedback" +
+                "&body=Name: " + encodeURIComponent(name) +
+                "%0D%0AEmail: " + encodeURIComponent(email) +
+                "%0D%0AService Satisfaction: " + encodeURIComponent(document.querySelectorAll('.stars i.check').length) +
+                "%0D%0AFeedback: " + encodeURIComponent(serviceFeedback);
+
+            // Open the default email client with the mailto link
+            window.location.href = mailtoLink;
+
+            clearForm(); // Clear form after submission
+        }
+    }
+
+    function clearForm() {
+        // Clear form fields
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("serviceFeedback").value = "";
+
+        // Reset error messages
+        document.querySelectorAll('.error-message').forEach(function (element) {
+            element.textContent = '';
+        });
+    }
+</script>
+<script>
+    const stars = document.querySelectorAll('.stars i');
+    const clear = document.querySelector('.clear-button')
+
+    stars.forEach((star) => {
+    star.addEventListener('click', () =>{
+        const color = parseInt(star.getAttribute("data-value"));
+        activateStars(color);
+    });
+    });
+
+    function activateStars(color) {
+        stars.forEach((star, index) => {
+            if (index < color){
+                star.classList.add("check");
+            }else{
+                star.classList.remove("check");
+            }
+        });
+    }
+
+    clear.addEventListener("click", () => {
+        stars.forEach((star,index) => {
+            if (index > 0){
+                star.classList.remove("check");
+            }
+        })
+    });
+</script>
+</body>
+</html>
